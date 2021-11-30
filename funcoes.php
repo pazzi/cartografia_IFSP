@@ -5,6 +5,7 @@
 	$dbname = "map";
 	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
+#funcaoa aser removida
 function verCursos(){
 	$result_cursos = "SELECT id, nome FROM curso";  
 	$result = mysqli_query($conn, $result_cursos);
