@@ -46,7 +46,7 @@ cabecalho();
 
    echo "<form  action=\"campus_cursos.php\" method=\"POST\">\n";
    echo  "<font class=title> $SISTEMA_NOME - Campus do IFSP</font> <br><br>";
-   echo "<select name=\"DROWS\" size=\"1\">\n";
+   echo "<select class=\"p-1\" name=\"DROWS\" size=\"1\">\n";
    echo "<pre>";
    while ($row = $result->fetch_assoc())
    {
@@ -82,31 +82,28 @@ fillSelect();
 		}
 	}
 
-echo "<div class=\"container mt-5\">";
-echo "<div class=\"row\">";
-echo "<div class=\"col-sm-8\">";
-$result_list=listCampusCursos($_POST["DROWS"]);
-echo "<h3>".nome_campus($_POST["DROWS"])."</h3>";
-echo "<table>";
-   while ($row = $result_list->fetch_assoc())
-   {
-	   echo  "<tr><td>". $row["nome"]. "</td><td> ". $row["descricao"]."</td></tr>";
-    }
-echo "</table>";
-echo "</div>";
+	echo "<div class=\"container mt-5\">";
+	echo "<div class=\"row\">";
+	echo "<div class=\"col-sm-8\">";
+	$result_list=listCampusCursos($_POST["DROWS"]);
+	echo "<h3>Campus: ".nome_campus($_POST["DROWS"])."</h3>";
+	echo "<table class=\"table table-Light\">";
+	while ($row = $result_list->fetch_assoc())
+	   {
+		   echo  "<tr>\n<td>". $row["nome"]. "\n</td><td> ". $row["descricao"]."</td>\n</tr>";
+	    }
+	echo "</table>";
+	echo "</div>";
 
-echo "<div class=\"col-sm-4\">";
-echo "<form action=\"campus_cursos.php\" method=\"POST\">";
-echo "<input type=\"hidden\" value=\"".$_POST["DROWS"]. "\" name=\"DROWS\">";
-   marca_fic();
-   echo "<input type=\"submit\" name=\"BAdd\" value=\"Adicionar\">\n";
-   echo "<input type=\"submit\" name=\"BRem\" value=\"Remover\">\n";
-#echo "<button class=\"btn btn-primary\" type=\"button\" name=\"btnAdd\" >Adicionar</button>";
-#echo "<button class=\"btn btn-danger\" type=\"button\" name=\"btnRem\" >Remover</button>";
-echo "</form>";
-echo "</div>";
-echo "</div>";
-
+	echo "<div class=\"col-sm-4\">";
+	echo "<form action=\"campus_cursos.php\" method=\"POST\">";
+	echo "<input type=\"hidden\" value=\"".$_POST["DROWS"]. "\" name=\"DROWS\">";
+	marca_fic();
+	echo "<input type=\"submit\" class=\"btn btn-primary m-3\" name=\"BAdd\" value=\"Adicionar\">\n";
+	echo "<input type=\"submit\" class=\"btn btn-danger m-3\" name=\"BRem\" value=\"Remover\">\n";
+	echo "</form>";
+	echo "</div>";
+	echo "</div>";
 }
 rodape();
 

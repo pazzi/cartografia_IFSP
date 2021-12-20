@@ -62,7 +62,7 @@ return;
    echo "<font class=corpo><b>$SISTEMA_NOME - Cursos </b></font> <br><br>";
    echo "<form action=\"curso.php\" method=\"POST\">\n";
 
-   echo "<p><b> Código:</b> ";
+   echo "<p><b> CÃ³digo:</b> ";
    switch ($fcnLetter)
      {
      case "E":                   //don't allow editing of key value
@@ -76,7 +76,7 @@ return;
    echo "<br>Categoria: ";
    echo "<input type=\"text\" name=\"TIcategoria\" value=\"$categoria\" size=11 maxlength=10>\n<br>";
 
-   echo "<br>Nível: ";
+   echo "<br>NÃ­vel: ";
    echo "<input type=\"text\" name=\"TInivel\" value=\"$nivel\" size=21 maxlength=20>\n<br>";
 
    echo "<br>FIC: ";

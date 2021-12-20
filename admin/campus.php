@@ -61,39 +61,47 @@ return;
        break;
      }
 
-   echo "<font class=corpo><b>$SISTEMA_NOME - Papeis dos empregados </b></font> <br><br>";
+   echo "<b>$SISTEMA_NOME - Cadastramento de Campus</b>";
    echo "<form action=\"campus.php\" method=\"POST\">\n";
-
-   echo "<p><b> Código:</b> ";
+   echo "<p>Codigo:";
    switch ($fcnLetter)
      {
      case "E":                   //don't allow editing of key value
-       echo "$id<br>\n";
-       echo "<input type=\"hidden\" name=\"HILid\" value=\"$id\">\n<br><br><br>";
+       echo "$id";
+       echo "<input type=\"hidden\" name=\"HILid\" value=\"$id\">\n";
        break;
      }
-   echo "<br>Nome: ";
-   echo "<input type=\"text\" name=\"TIname\" value=\"$name\" size=61 maxlength=60>\n<br>";
+   echo "</p>";
+   echo "<div class=\"formulario\">";
+   echo "Nome: ";
+   echo "<input type=\"text\" name=\"TIname\" value=\"$name\" size=61 maxlength=60>";
+   echo "</div>\n";	
 
-   echo "<br>Endereço: ";
-   echo "<input type=\"text\" name=\"TIaddress\" value=\"$address\" size=121 maxlength=120>\n<br>";
+   echo "<div class=\"formulario\">";
+   echo "EndereÃ§o: ";
+   echo "<input type=\"text\" name=\"TIaddress\" value=\"$address\" size=121 maxlength=120>";
+   echo "</div\n>";	
 
-   echo "<br>Latitude: ";
-   echo "<input type=\"text\" name=\"TIlat\" value=\"$lat\" size=21 maxlength=220>\n<br>";
+   echo "<div class=\"formulario\">";
+   echo "Latitude: ";
+   echo "<input type=\"text\" name=\"TIlat\" value=\"$lat\" size=21 maxlength=20>";
+   echo "</div>\n";	
 
-   echo "<br>Longitude: ";
-   echo "<input type=\"text\" name=\"TIlng\" value=\"$lng\" size=21 maxlength=20>\n<br>";
+   echo "<div class=\"formulario\">";
+   echo "Longitude: ";
+   echo "<input type=\"text\" name=\"TIlng\" value=\"$lng\" size=21 maxlength=20>";
+   echo "</div>\n";	
 
-   echo "<br>Tipo: ";
-   echo "<input type=\"text\" name=\"TItype\" value=\"$type\" size=31 maxlength=30>\n<br>";
+   echo "<div class=\"formulario\">";
+   echo "Tipo: ";
+   echo "<input type=\"text\" name=\"TItype\" value=\"$type\" size=31 maxlength=30>";
+   echo "</div>\n";	
 
-   //**** PLACE FUNCTION LETTER IN BUTTON NAMES TO CONVEY STATE ****
-   echo "    <p><input type=\"submit\" name=\"B" . $fcnLetter;
-   echo "Submit\" value=\"Submit\">\n";
+   echo "<div class=\"formulario\">";
+   echo "<input type=\"submit\" name=\"B" . $fcnLetter. "Submit\" value=\"Submit\">\n";
    echo "&nbsp;&nbsp;\n";
-
-   echo "<input type=\"submit\" name=\"B" . $fcnLetter;
-   echo "Cancel\" value=\"Cancel\">\n";
+   echo "<input type=\"submit\" name=\"B" . $fcnLetter. "Cancel\" value=\"Cancel\">\n";
+   echo "</div>\n";	
    echo "</form>\n";
 
    }
@@ -240,11 +248,6 @@ $id= $regs[0];
 	sql("$BD2","DELETE FROM markers where id='$id';");
    }
 
- //**** END STATE-SPECIFIC SUBROUTINES ****
-
-
- //**** BEGIN MAIN PROGRAM ****
-// header('<META HTTP-EQUIV="pragma" CONTENT="nocache">'); 
  setGlobals();
 cabecalho();
 
@@ -281,13 +284,5 @@ cabecalho();
      echo "Illegal function identifier encountered:$fcn:<p>\n";
      break;
    }
-echo "<br>";
-echo "<br>";
-echo "<center><a href=./repres.php3><font class=corpo>Sair</font></a>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
 rodape();
-
- //**** END MAIN PROGRAM ****
 ?>

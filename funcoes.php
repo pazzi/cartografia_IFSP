@@ -6,7 +6,6 @@ $CAMINHO="maps/leaf2/v1/admin/admSist";
 function cabecalho()
 {
 global $CAMINHO;
-
 echo "<!DOCTYPE html>";
 echo "<html lang=\"en\">";
 echo "<head>";
@@ -15,15 +14,23 @@ echo "
 	<meta charset=\"UTF-8\">
 	<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
 	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+	<link rel=\"stylesheet\" href=\"custom.css\">
 	<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
 	</head>
-	<body>";
+	<body>
+	<div class=\"cabecalho\">
+	<div class=\"p-2 bg-success bg-gradient text-white text-center\">
+  	<h1>Cartografia - IFSP</h1>
+  	<p>Dados do IFSP</p> 
+	</div>
+	</div>
+";
 }
 
 function rodape()
 {
-	echo "<div class=\"mt-5 p-4 bg-dark text-white text-center\">";
-	echo "<p>Projeto de Extens„o: Base Cartogr·fica Digital do IFSP  IFSP-<b>Campus Capivari, SP</b></p>\n";
+	echo "<div class=\"mt-5 p-4 bg-success bg-gradiente text-white text-center\">";
+	echo "<p>Projeto de Extens√£o: Base Cartogr√°fica Digital do IFSP  IFSP-<b>Campus Capivari, SP</b></p>\n";
 	echo "</div>";
 	echo "</body>\n";
 	echo "</html>\n";
