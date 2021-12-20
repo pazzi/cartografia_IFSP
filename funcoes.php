@@ -209,7 +209,8 @@ function icon_color($tipo)
 {
 echo "var ".$tipo. "Icon = new L.Icon({\n";
 echo "iconUrl: './icons/". $tipo.".png',\n";                                                                                 
-echo "shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',\n";  
+#echo "shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',\n";  
+echo "shadowUrl: './icons/marker-shadow.png',\n";  
 echo "iconSize: [25, 41],\n"; 
 echo "conAnchor: [12, 41],\n"; 
 echo "popupAnchor: [1, -34],\n"; 
