@@ -2,9 +2,6 @@
 $BD2="map";
 $SISTEMA_NOME="Cartografia Digital";
 $CAMINHO="maps/leaf2/v1/admin/admSist"; 
-$RESP_NDI_EMAIL="";
-#Verificar o id correspondente ao papel  "ponto focal" em rep_papel
-$PONTO_FOCAL_ID=13;
 
 function cabecalho()
 {
@@ -14,8 +11,8 @@ echo "<!DOCTYPE html>";
 echo "<html lang=\"en\">";
 echo "<head>";
 echo "
-	<title></title>
-	<meta charset=\"ISO-8859-1\">
+	<title>Cartografia Digital</title>
+	<meta charset=\"UTF-8\">
 	<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
 	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
 	<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
@@ -23,91 +20,14 @@ echo "
 	<body>";
 }
 
-
-function cabecalho_simples()
-{
-global $CAMINHO;
-echo "<!DOCTYPE html>";
-echo "<html lang=\"en\">";
-echo "<head>";
-echo "
-    <meta charset=\"ISO-8859-1\">
-    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    <title></title>
-
-    <link media=\"all\" type=\"text/css\" rel=\"stylesheet\" href=\"/intranet/nosso_ambiente/admin/adm_repres/public/css/bootstrap.min.css\">
-    <link media=\"all\" type=\"text/css\" rel=\"stylesheet\" href=\"/intranet/nosso_ambiente/admin/adm_repres/public/css/metisMenu.min.css\">
-    <link media=\"all\" type=\"text/css\" rel=\"stylesheet\" href=\"/intranet/nosso_ambiente/admin/adm_repres/public/css/sb-admin-2.css\">
-    <link media=\"all\" type=\"text/css\" rel=\"stylesheet\" href=\"/intranet/nosso_ambiente/admin/adm_repres/public/css/font-awesome.min.css\">
-</head>
-<body>";
-echo "<nav class=\"navbar navbar-inverse\">\n";
-echo "<div class=\"container-fluid\">\n";
-echo "<div class=\"navbar-header\">\n";
-echo "<a class=\"navbar-brand\" href=\"http://localhost/".$CAMINHO."/consultas/publico.php\">R E P R E S E N T A C O E S &nbsp;&nbsp;    I N S T I T U C I O N A I S</a>";
-echo "  </div>\n";
-echo "    <ul class=\"nav navbar-nav\">\n";
-echo "      <li><a href=\"http://localhost/".$CAMINHO."/relato/relato_login.php?ano_base=".date(Y)."\">Relato-Login</a></li>\n";
-echo "      <li><a href=\"http://localhost/".$CAMINHO."/pub_referencias.php\">Sobre</a></li>\n";
-echo "    </ul>\n";
-echo "  </div>\n";
-echo "</nav>\n";
-
-}
-
-function cabecalho_publico()
-{
-
-echo "<!DOCTYPE html>";
-echo "<html lang=\"en\">";
-
-echo "<head>";
-echo "
-    <meta charset=\"ISO-8859-1\">
-    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    <title></title>
-
-    <link media=\"all\" type=\"text/css\" rel=\"stylesheet\" href=\"/".$CAMINHO."/public/css/bootstrap.css\">
-    <link media=\"all\" type=\"text/css\" rel=\"stylesheet\" href=\"/".$CAMINHO."/public/css/metisMenu.min.css\">
-    <link media=\"all\" type=\"text/css\" rel=\"stylesheet\" href=\"/".$CAMINHO."/public/css/sb-admin-2.css\">
-    <link media=\"all\" type=\"text/css\" rel=\"stylesheet\" href=\"/".$CAMINHO."/public/css/font-awesome.min.css\">
-</head>
-<body>";
-echo "<nav class=\"navbar navbar-inverse\">";
-echo "<div class=\"container-fluid\">";
-echo "<div class=\"navbar-header\">";
-echo "<a class=\"navbar-brand\" href=\"http://localhost/".$CAMINHO."/repres.php\">C A R T O G R A F I A  &nbsp;&nbsp;    D I G I T A L</a>";
-echo "  </div>";
-echo "    <ul class=\"nav navbar-nav\">";
-echo "      <li><a href=\"http://localhost/".$CAMINHO."/pub_referencias.php\">Sobre</a></li>";
-echo "    </ul>";
-echo "</nav>";
-
-}
-
 function rodape()
 {
-
-echo "<br>\n";
-echo "<br>\n";
-echo "<center>\n";
-
-echo "<table>\n";
-echo "<tr>\n";
-echo "<td WIDTH=\"100%\" HEIGHT=\"16\" align=\"center\"><font class=\"tiny\">Copyright © &nbsp;2021-".date('Y')." IFSP<br> <b>Campus Capivari, SP</b></font>\n";
-echo "</td>\n";
-echo "</tr>\n";
-echo "</table>\n";
-echo "</center>\n";
-
-
-
-echo "</body>\n";
-echo "</html>\n";
+	echo "<div class=\"mt-5 p-4 bg-dark text-white text-center\">";
+	echo "<p>Projeto de Extensão: Base Cartográfica Digital do IFSP  IFSP-<b>Campus Capivari, SP</b></p>\n";
+	echo "</div>";
+	echo "</body>\n";
+	echo "</html>\n";
 }
-
 
 function conectar(){
 	$servidor = "localhost";
