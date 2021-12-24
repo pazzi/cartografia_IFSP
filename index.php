@@ -49,7 +49,10 @@ $conn=conectar();
   	</div>
 	</form>
 
-<?php echo $texto?>
+<?php 
+$texto=isset($texto)? $texto: '';
+echo $texto
+?>
 
       <!--h2 class="mt-5">TITLE HEADING</h2>
       <h5>Title description, Sep 2, 2020</h5>
@@ -62,7 +65,8 @@ $conn=conectar();
 
 
 <?php
-if ($_POST['flag'] && ver_retorno_curso())
+$flag=isset($_POST['flag'])? $_POST['flag']: '';
+if ($flag && ver_retorno_curso())
 {
 	$id=ver_retorno_curso();
 	$result_markers = busca_marcadores_por_curso($id);
