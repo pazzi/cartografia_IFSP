@@ -1,0 +1,31 @@
+body{
+    background-color: rgb(249, 255, 247);
+}
+
+
+
+#listaCursos{
+    background-color:rgb(249, 255, 247);
+    margin: 1px;
+    padding: 1px;
+    vertical-align:text-top;
+}
+
+
+form{
+    margin: 1px;
+}
+
+select{
+margin: 5px;
+font-size:small;
+}
+
+button{
+    background-color: rgb(251, 252, 253);
+    padding-right: 3px;
+    align-self: center;
+    font-size:small;
+}
+
+
