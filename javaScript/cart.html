@@ -32,12 +32,12 @@
   <body>
     <div class="container-fluid mt-3">
       <div class="row">
-        <div class="col-sm-5">
+        <div class="col-5">
           <div id="map" style="width: 790px; height: 560px"></div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-4">
           <div class="add">
-            <form name="form" onreset="Reset">
+            <form id="formulario" name="form" onreset="Reset">
               <div id="listaCursos" class="listaDeCursos"></div>
               <button id="btnCursos" onclick="listaCurso(event)">
                 Escolher
@@ -46,6 +46,7 @@
               <button id="btnIfsp" onclick="mostraTodos(event)">Todos</button>
             </form>
           </div>
+	  <div class="curso"></div>
         </div>
       </div>
     </div>
@@ -92,10 +93,11 @@
         for (let marca of marcas) {
           var LamMarker = new L.marker([marca.lat, marca.lng]).bindPopup(
             "<b>Campus " + marca.name + "</b><br>" + marca.address
-          );
-          mark.push(LamMarker);
+          )
+          mark.push(LamMarker)
           mymap.addLayer(LamMarker);
         }
+	cursoCidade(marcas)		
       }
 
       function markerDelAgain() {
@@ -171,8 +173,9 @@
       function Reset() {}
       var curso_arr = new Array();
 
-      function listaCurso() {
-        event.preventDefault();
+      function listaCurso(e) {
+        e.preventDefault();
+        limpaMapa(e)
         var dados_sel = [];
 
         for (i = 1; i <= arr_fic.length; i++) {
@@ -194,12 +197,50 @@
               listaMarcadores(dados);
             });
         }
+       document.getElementById("formulario").reset();
       }
 
-      function limpaMapa() {
-        event.preventDefault();
+      function limpaMapa(e) {
+        e.preventDefault();
         markerDelAgain();
       }
+
+	function cursoCidade(marcas) {
+	var flag = 0
+	var lista =[]
+        for (let marca of marcas) {
+			if(flag==0)
+			{
+				if(marca.nome) 
+				{
+					lista.push("Campus que oferecem o curso de " + (marca.nome).trim() + ": ")
+					lista.push(marca.name)
+					flag=2
+				}
+				else{
+					lista.push("Campus do IFSP:")
+				}
+			}else
+			{
+				lista.push(marca.name)
+			}
+		flag++
+		}
+               	let course = document.createElement("null")
+		console.log(lista)
+		var linha = ""
+		for(x=0; x<(lista.length); x++)
+		{
+			lin = x==0?lista[x]:lista[x]+", "
+			if(x==(lista.length-1))
+				{		
+					lin=lin+lista[x]+"."
+				}
+			linha = linha + lin
+		}
+		document.getElementsByClassName("curso")[0].innerHTML = linha
+	}
+
       buscaFics();
     </script>
   </body>
