@@ -231,10 +231,11 @@
 		var linha = ""
 		for(x=0; x<(lista.length); x++)
 		{
-			lin = x==0?lista[x]:lista[x]+", "
 			if(x==(lista.length-1))
 				{		
-					lin=lin+lista[x]+"."
+					lin=lista[x]+"."
+				}else{
+					lin = x==0?lista[x]:lista[x]+", "
 				}
 			linha = linha + lin
 		}
